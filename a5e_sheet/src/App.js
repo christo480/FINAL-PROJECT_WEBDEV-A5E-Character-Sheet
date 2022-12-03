@@ -23,6 +23,7 @@ function App() {
         </a>
         <Sheet heritage={heritage} changeHeritage={setHeritage}></Sheet>
       </header>
+      
     </div>
   );
 }
