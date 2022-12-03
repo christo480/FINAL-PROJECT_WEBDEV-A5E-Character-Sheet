@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import Sheet from './components/Sheet';
+
 
 function App() {
+  const [heritage, setHeritage] = useState("Dragonborn");
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +21,7 @@ function App() {
         >
           Learn React
         </a>
+        <Sheet heritage={heritage} changeHeritage={setHeritage}></Sheet>
       </header>
     </div>
   );
