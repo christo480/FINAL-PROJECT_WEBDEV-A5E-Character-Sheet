@@ -3,6 +3,14 @@ import '../styles/Sheet.css';
 import Header from './Header';
 import Feature from "./Feature";
 function Sheet(props) {
+
+  // Need to track all numbers on character sheet
+  // Ability Scores
+  // Proficiency
+  // Saves
+  //
+
+  //Focus on pull all data needed for this: https://a5e.tools/rules/urthek
   const [data, setData] = useState(null);
   // Example link 
   //http://localhost:3200/db/findOne/test_database/test_collection/
@@ -15,7 +23,7 @@ function Sheet(props) {
     console.log(data)
     console.log(query)
     
-    setData(data.Age);
+    setData(data.Size);
   }
 
   
@@ -23,7 +31,7 @@ function Sheet(props) {
       <div className="sheet_App">
         <Header heritage={data} heritage_updater={fetchData} ></Header>
         <div className="sheet_body">
-            <Feature Age={data}></Feature>
+            <Feature title="Size" value={data}></Feature>
         </div>
         
       </div>

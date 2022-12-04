@@ -2,7 +2,8 @@ function Feature(props) {
     return (
       <div>
         
-        <h2>{props.Age}</h2>
+        <strong>{props.title}</strong><p>{props.value}</p>
+
         
       </div>
     );
