@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import '../styles/Sheet.css';
 import Header from './Header';
 import Feature from "./Feature";
+import Heritage_Section from "./Heritage_Section";
 function Sheet(props) {
 
   // Need to track all numbers on character sheet
@@ -11,7 +12,7 @@ function Sheet(props) {
   //
 
   //Focus on pull all data needed for this: https://a5e.tools/rules/urthek
-  const [data, setData] = useState(null);
+  const [Heritage, setHeritage] = useState({Name:"",Age:"",Size:"",Speed:""});
   // Example link 
   //http://localhost:3200/db/findOne/test_database/test_collection/
   async function fetchData(query) {
@@ -23,16 +24,17 @@ function Sheet(props) {
     console.log(data)
     console.log(query)
     
-    setData(data.Size);
+    setHeritage({Name:data.Name,Age:data.Age,Size:data.Size,Speed:data.Speed});
   }
 
   
     return (
       <div className="sheet_App">
-        <Header heritage={data} heritage_updater={fetchData} ></Header>
+        <Header heritage_updater={fetchData} ></Header>
         <div className="sheet_body">
-            <Feature title="Size" value={data}></Feature>
+        <Heritage_Section Name={Heritage.Name} Age={Heritage.Age} Size={Heritage.Size} Speed={Heritage.Speed}></Heritage_Section> 
         </div>
+        <hr></hr>
         
       </div>
     );

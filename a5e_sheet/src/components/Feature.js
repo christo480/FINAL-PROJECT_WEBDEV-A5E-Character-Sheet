@@ -1,10 +1,8 @@
 function Feature(props) {
+  //A feature is a name and a description
     return (
       <div>
-        
-        <strong>{props.title}</strong><p>{props.value}</p>
-
-        
+        <b>{props.title}</b><p>{props.value}</p>
       </div>
     );
   }

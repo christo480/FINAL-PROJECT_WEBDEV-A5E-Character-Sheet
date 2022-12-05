@@ -1,6 +1,3 @@
-
-
-
 function Header(props) {
   // FOrmat input tags
 async function get_heritage(event)

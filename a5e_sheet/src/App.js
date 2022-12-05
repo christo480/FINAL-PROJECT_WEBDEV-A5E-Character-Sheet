@@ -5,7 +5,13 @@ import Sheet from './components/Sheet';
 
 
 function App() {
-  const [heritage, setHeritage] = useState("Dragonborn");
+  //Manage States of following variables
+  const [Class, setClass] = useState("");
+  const [heritage, setHeritage] = useState("");
+  const [Culture, setCulture] = useState("");
+  const [Background, setBackground] = useState("");
+  const [Destiny, setDestiny] = useState("");
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -21,7 +27,7 @@ function App() {
         >
           Learn React
         </a>
-        <Sheet heritage={heritage} changeHeritage={setHeritage}></Sheet>
+        <Sheet heritage={heritage} changeHeritage={setHeritage} class={Class} changeClass={setClass} culture={Culture} changeCulture={setCulture} background={Background} changeBackground={setBackground}></Sheet>
       </header>
       
     </div>
