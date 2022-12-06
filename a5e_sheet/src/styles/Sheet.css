@@ -1,0 +1,4 @@
+.sheet_body{
+    display: flex;
+    justify-content: space-around;
+}
