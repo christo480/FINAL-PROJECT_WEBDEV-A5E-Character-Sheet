@@ -21,6 +21,16 @@ function get_class(event)
   let input =event.target.value
   props.class_updater(input)
 }
+function get_culture(event)
+{
+ 
+  //fetch call that pulls heritage data from mongoDB
+  //should set react state webhook to update features dynamically
+
+  console.log(event.target.value)//prints value of input
+  let input =event.target.value
+  props.culture_updater(input)
+}
     return (
       <div className="sheet_App">
         
@@ -29,7 +39,7 @@ function get_class(event)
         <label>Heritage:</label>
         <input type="text" id="heritage" name="heritage" onChange={get_heritage}></input>
         <label>Culture:</label>
-        <input type="text" id="culture" name="culture" onChange></input>
+        <input type="text" id="culture" name="culture" onChange={get_culture}></input>
         <label>Background:</label>
         <input type="text" id="background" name="background" onChange></input>
         <label>Destiny:</label>
