@@ -1,0 +1,35 @@
+import Feature from "./Feature";
+function Culture_Section(props) {
+    //A feature is a name and a description
+    console.log(props)
+    let data= props.data()
+    if(data['Features']){
+        
+        let Features =Object.keys(data.Features)
+
+        return (
+            <div>
+            {
+                Features.map((val,idx)=>{
+                    return(
+                        <Feature title={val} value={data.Features[val]}></Feature>
+                    )
+
+                })
+            }
+            <Feature title="Languages" value={props.Languages}></Feature>
+            {/* <Feature title="Set" value={props.Set["Brigand’s Set"]["Cost"]}></Feature> */}
+            
+            </div>
+        );}
+    else
+    {
+        return(
+            <div>
+            
+            </div>
+        );
+    }
+    }
+  
+export default Culture_Section;
