@@ -6,14 +6,9 @@ import Heritage_Section from "./Heritage_Section";
 import Class_Section from "./Class_Section";
 import { DiceRoll, RollGroup } from '@dice-roller/rpg-dice-roller'; 
 import Culture_Section from "./Culture_Section";
+import ABS from "./ABS"
 
 
-// function arbitrary_roll()
-//   {
-//     let query = document.getElementById("arbitrary_roll").value
-//     const roll = new DiceRoll(query)
-//     alert(roll.total)
-//   }
 function Sheet(props) {
 
   // Using a Dice roller api to genengerate 3d6 and 4d6 stats should satisfy public api use
@@ -77,6 +72,12 @@ function Sheet(props) {
     
     setCulture({Features:data.Features,Languages:data.Languages});
   }
+  // function arbitrary_roll()
+//   {
+//     let query = document.getElementById("arbitrary_roll").value
+//     const roll = new DiceRoll(query)
+//     alert(roll.total)
+//   }
   function culture_data()// When deadling with dynamic data a function must be sent for the data to be dynamically loaded
   {
     return Culture
@@ -90,10 +91,12 @@ function Sheet(props) {
         <div className="sheet_body">
         <Heritage_Section Name={Heritage.Name} Age={Heritage.Age} Size={Heritage.Size} Speed={Heritage.Speed}></Heritage_Section> 
         <Class_Section Name={Class.Name} HitDie={Class.HitDie}></Class_Section>
-        <Culture_Section data= {culture_data}></Culture_Section> 
+         
         </div>
         <hr></hr>
-        
+        <ABS></ABS>
+        <hr></hr>
+        <Culture_Section data= {culture_data}></Culture_Section>
       </div>
     );
   }

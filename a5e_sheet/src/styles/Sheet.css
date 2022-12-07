@@ -7,6 +7,11 @@
     border-color: #E85454;
     border-style: solid;
 }
+.select
+{
+    border-color: #E85454;
+    border-style: solid;
+}
 .sheet_body{
     display: flex;
     justify-content: space-around;
