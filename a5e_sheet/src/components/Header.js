@@ -33,16 +33,16 @@ function get_culture(event)
 }
     return (
       <div className="Header_App">
-        
-        <label>Class: </label>
+      
+        <label>Class</label>
         <input type="text" id="class" name="class" onChange={get_class}></input>
-        <label>Heritage: </label>
+        <label>Heritage</label>
         <input type="text" id="heritage" name="heritage" onChange={get_heritage}></input>
-        <label>Culture: </label>
+        <label>Culture</label>
         <input type="text" id="culture" name="culture" onChange={get_culture}></input>
-        <label>Background: </label>
+        <label>Background</label>
         <input type="text" id="background" name="background" onChange></input>
-        <label>Destiny: </label>
+        <label>Destiny</label>
         <input type="text" id="destiny" name="destiny" onChange></input>
         
       </div>

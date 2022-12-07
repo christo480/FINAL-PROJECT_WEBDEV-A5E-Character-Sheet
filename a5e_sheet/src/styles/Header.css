@@ -3,4 +3,5 @@
     font-family: Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     background-color: #DDDDDD;
+    flex-direction: column;
 }
