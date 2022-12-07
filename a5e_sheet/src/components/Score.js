@@ -1,3 +1,4 @@
+import { DiceRoll, RollGroup } from '@dice-roller/rpg-dice-roller'; 
 function Score(props) {
     //A feature is a name and a description
     
