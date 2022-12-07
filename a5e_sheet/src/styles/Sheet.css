@@ -10,7 +10,8 @@
 .sheet_body{
     display: flex;
     justify-content: space-around;
-    font-size: 1/16vw;
+    /* font-size: 1/16vw; */
+    text-size-adjust: auto;
 }
 hr
 {
