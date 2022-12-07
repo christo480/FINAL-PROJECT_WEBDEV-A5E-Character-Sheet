@@ -1,4 +1,4 @@
-
+import '../styles/Header.css'
 function Header(props) {
   // FOrmat input tags
 async function get_heritage(event)
@@ -32,7 +32,7 @@ function get_culture(event)
   props.culture_updater(input)
 }
     return (
-      <div className="sheet_App">
+      <div className="Header_App">
         
         <label>Class:</label>
         <input type="text" id="class" name="class" onChange={get_class}></input>

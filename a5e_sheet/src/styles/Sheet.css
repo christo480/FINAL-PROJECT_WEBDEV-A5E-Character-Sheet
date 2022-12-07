@@ -1,5 +1,18 @@
+.sheet_App{
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    background-color: #DDDDDD;
+    padding: 2%;
+    border-color: #E85454;
+    border-style: solid;
+}
 .sheet_body{
     display: flex;
     justify-content: space-around;
     font-size: 1/16vw;
+}
+hr
+{
+    height: 1px;
+    background-color: #E85454;
 }
