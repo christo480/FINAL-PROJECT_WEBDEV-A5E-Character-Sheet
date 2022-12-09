@@ -8,6 +8,7 @@ import { DiceRoll, RollGroup } from '@dice-roller/rpg-dice-roller';
 import Culture_Section from "./Culture_Section";
 import ABS from "./ABS"
 import Roller from "./Roller";
+import Generator from "./Generator";
 
 
 function Sheet(props) {
@@ -95,7 +96,11 @@ function Sheet(props) {
         <Header heritage_updater={fetch_Heritage_Data} class_updater={fetch_Class_Data} culture_updater={fetch_Culture_Data}></Header>
         {/* <input type="text" id="arbitrary_roll" ></input>
         <button onClick={arbitrary_roll}> Roll</button>  */}
-        <Roller></Roller>
+        <div className="rollers">
+          <Roller></Roller>
+          <Generator Str={Str} Str_setter={setStr} Dex={Dex} Dex_setter={setDex} Con={Con} Con_setter={setCon} Int={Int} Int_setter ={setInt} Wis={Wis} Wis_setter = {setWis} Cha={Cha} Cha_setter={setCha}></Generator>
+        </div>
+        
         <hr></hr>
         <div className="sheet_body">
         <Heritage_Section Name={Heritage.Name} Age={Heritage.Age} Size={Heritage.Size} Speed={Heritage.Speed}></Heritage_Section> 

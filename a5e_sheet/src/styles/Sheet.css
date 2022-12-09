@@ -7,6 +7,13 @@
     border-color: #E85454;
     border-style: solid;
 }
+.rollers
+{
+    display: flex;
+    justify-content: space-between;
+    /* font-size: 1/16vw; */
+    text-size-adjust: auto;
+}
 .select
 {
     border-color: #E85454;
