@@ -5,7 +5,7 @@ function Feature(props) {
     //If Age is being rendered we only care about last sentance where max life expentency is stated
     let string = props.value
     string = string.split('.')
-    console.log(string[string.length-2])
+    //console.log(string[string.length-2])
     let last_sentence=string[string.length-2]
     return (
       

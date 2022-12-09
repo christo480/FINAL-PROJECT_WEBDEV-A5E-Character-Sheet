@@ -14,9 +14,10 @@ function ConScore(props) {
     }
     function roll()
     {
-      const roll =(new DiceRoll('1d20')).total+Math.floor((props.value-10)/2)
-      console.log(props.name+"Roll (1d20 + "+Math.floor((props.value-10)/2)+") = "+roll)
-      alert(props.name+"Roll (1d20 + "+Math.floor((props.value-10)/2)+") = "+roll)
+      const roll =(new DiceRoll('1d20'))
+      const result=roll.total+Math.floor((props.value-10)/2)
+      console.log(props.name+"Roll "+roll+"+"+Math.floor((props.value-10)/2)+"="+result)
+      alert(props.name+"Roll "+roll+"+"+Math.floor((props.value-10)/2)+"="+result)
     }
       return (
         

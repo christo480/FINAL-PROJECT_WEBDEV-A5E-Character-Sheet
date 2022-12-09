@@ -1,13 +1,13 @@
 import Feature from "./Feature";
 function Culture_Section(props) {
     //A feature is a name and a description
-    console.log(props)
+    //console.log(props)
     
     let data= props.data()
     if(data['Features']){
         
         let Features =Object.keys(data.Features)
-        console.log(data)
+        //console.log(data)
         return (
             <div>
             <h2>{data.Name}</h2>

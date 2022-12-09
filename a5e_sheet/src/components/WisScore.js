@@ -1,6 +1,6 @@
 import { DiceRoll, RollGroup } from '@dice-roller/rpg-dice-roller';
 import '../styles/StrScore.css'
-function IntScore(props) {
+function WisScore(props) {
     //A feature is a name and a description
     function printChange(event)
     {
@@ -31,4 +31,4 @@ function IntScore(props) {
       );
     }
 
-export default IntScore;
+export default WisScore;
