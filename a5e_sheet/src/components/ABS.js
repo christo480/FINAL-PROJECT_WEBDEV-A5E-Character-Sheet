@@ -1,6 +1,9 @@
 import Score from "./Score";
 import '../styles/ABS.css'
-import StrScore from "./StrScore"; 
+import StrScore from "./StrScore";
+import DexScore from "./DexScore"; 
+import ConScore from "./ConScore";
+import IntScore from "./IntScore";
 function ABS(props) {
     // Renders ability scores for character
       return (
@@ -9,16 +12,11 @@ function ABS(props) {
           <b>Ability Scores</b>
           <div className="scores">
             <StrScore name="Str" value={props.Str} setter={props.Str_setter}></StrScore>
-            <Score></Score>
-            <Score></Score>
-            <Score></Score>
-            <Score></Score>
-            <Score></Score>
-             {/*<DexScore name="Dex" value={props.Dex}></DexScore>
-            <ConScore name="Con" value={props.Con}></ConScore>
-            <IntScore name="Int" value={props.Int}></IntScore>
-            <WisScore name="Wis" value={props.Wis}></WisScore>
-            <ChaScore name="Cha" value={props.Cha}></ChaScore> */}
+            <DexScore name="Dex" value={props.Dex} setter={props.Dex_setter}></DexScore>
+            <ConScore name="Con" value={props.Con} setter={props.Con_setter}></ConScore>
+            <IntScore name="Int" value={props.Int} setter={props.Int_setter}></IntScore>{/*
+            <WisScore name="Wis" value={props.Wis} setter={props.Wis_setter}></WisScore>
+            <ChaScore name="Cha" value={props.Cha} setter={props.Cha_setter}></ChaScore> */}
           </div>
         </div>
       );

@@ -78,12 +78,13 @@ function Sheet(props) {
     
     setCulture({Features:data.Features,Languages:data.Languages});
   }
-  // function arbitrary_roll()
-//   {
-//     let query = document.getElementById("arbitrary_roll").value
-//     const roll = new DiceRoll(query)
-//     alert(roll.total)
-//   }
+  function arbitrary_roll()
+  {
+    let query = document.getElementById("arbitrary_roll").value
+    const roll = new DiceRoll(query)
+    console.log(roll)
+    alert(query+"= "+roll.total)
+  }
   function culture_data()// When deadling with dynamic data a function must be sent for the data to be dynamically loaded
   {
     return Culture
@@ -92,7 +93,7 @@ function Sheet(props) {
       <div className="sheet_App">
         <Header heritage_updater={fetch_Heritage_Data} class_updater={fetch_Class_Data} culture_updater={fetch_Culture_Data}></Header>
         <input type="text" id="arbitrary_roll" ></input>
-        {/* <button onClick={arbitrary_roll()}> Roll</button> */}
+        <button onClick={arbitrary_roll}> Roll</button> 
         <hr></hr>
         <div className="sheet_body">
         <Heritage_Section Name={Heritage.Name} Age={Heritage.Age} Size={Heritage.Size} Speed={Heritage.Speed}></Heritage_Section> 

@@ -1,6 +1,6 @@
 import { DiceRoll, RollGroup } from '@dice-roller/rpg-dice-roller';
 import '../styles/StrScore.css'
-function StrScore(props) {
+function IntScore(props) {
     //A feature is a name and a description
     function printChange(event)
     {
@@ -28,8 +28,6 @@ function StrScore(props) {
           <button onClick={roll}> ROLL</button>
         </div>
       );
-    }  
-   
-    
-  
-  export default StrScore;
+    }
+
+export default IntScore;
