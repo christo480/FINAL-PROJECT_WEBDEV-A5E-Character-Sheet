@@ -1,0 +1,7 @@
+.Score_section
+{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    
+}
