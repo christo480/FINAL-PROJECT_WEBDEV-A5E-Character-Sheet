@@ -7,6 +7,7 @@ import Class_Section from "./Class_Section";
 import { DiceRoll, RollGroup } from '@dice-roller/rpg-dice-roller'; 
 import Culture_Section from "./Culture_Section";
 import ABS from "./ABS"
+import Roller from "./Roller";
 
 
 function Sheet(props) {
@@ -83,7 +84,7 @@ function Sheet(props) {
     let query = document.getElementById("arbitrary_roll").value
     const roll = new DiceRoll(query)
     console.log(roll)
-    alert(query+"= "+roll.total)
+    alert(roll)
   }
   function culture_data()// When deadling with dynamic data a function must be sent for the data to be dynamically loaded
   {
@@ -92,8 +93,9 @@ function Sheet(props) {
     return (
       <div className="sheet_App">
         <Header heritage_updater={fetch_Heritage_Data} class_updater={fetch_Class_Data} culture_updater={fetch_Culture_Data}></Header>
-        <input type="text" id="arbitrary_roll" ></input>
-        <button onClick={arbitrary_roll}> Roll</button> 
+        {/* <input type="text" id="arbitrary_roll" ></input>
+        <button onClick={arbitrary_roll}> Roll</button>  */}
+        <Roller></Roller>
         <hr></hr>
         <div className="sheet_body">
         <Heritage_Section Name={Heritage.Name} Age={Heritage.Age} Size={Heritage.Size} Speed={Heritage.Speed}></Heritage_Section> 
