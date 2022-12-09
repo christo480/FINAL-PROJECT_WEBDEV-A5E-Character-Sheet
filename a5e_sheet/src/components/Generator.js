@@ -1,5 +1,6 @@
 import { DiceRoll, RollGroup } from '@dice-roller/rpg-dice-roller'; 
 function Generator(props) {
+
     function arbitrary_roll()
   {
     let query = document.getElementById("arbitrary_roll").value
@@ -7,25 +8,46 @@ function Generator(props) {
     console.log(roll)
     alert(roll)
   }
+  function Generate_roll_array(query,size)
+  {
+    let arr = Array()
+    for (let i =0; i<=size;i++)
+    {
+        arr.push((new DiceRoll(query)).total)
+    }
+    return arr
+  }
   function Generate_3d6()
   {
     let query = document.getElementById("arbitrary_roll").value
-    const roll = new DiceRoll(query)
-    console.log(roll)
-    alert(roll)
+    let roll_arr =  Generate_roll_array('1d6',3).sort()
+    console.log(roll_arr)
+    roll_arr.splice(0,1)
+    let sum = roll_arr.reduce((sum,val)=> sum+val)
+    return (sum)
+    // console.log(roll_arr)
+    // alert(roll_arr)
+  }
+  function Generate_3d6_all()
+  {
+    props.Str_setter(Generate_3d6())
   }
   function Generate_4d6()
   {
     let query = document.getElementById("arbitrary_roll").value
-    const roll = new DiceRoll(query)
-    console.log(roll)
-    alert(roll)
+    let roll_arr =  Generate_roll_array('1d6',4).sort()
+    console.log(roll_arr)
+    roll_arr.splice(0,1)
+    let sum = roll_arr.reduce((sum,val)=> sum+val)
+    console.log(sum)
+    //console.log(roll_arr)
+    //alert(roll_arr)
   }
       return (
         
         <div>
            
-            <button onClick={Generate_3d6}> Generate 3d6 Stats</button> 
+            <button onClick={Generate_3d6_all}> Generate 3d6 Stats</button> 
             <button onClick={Generate_4d6}> Generate 4d6 Stats</button> 
         </div>
       );

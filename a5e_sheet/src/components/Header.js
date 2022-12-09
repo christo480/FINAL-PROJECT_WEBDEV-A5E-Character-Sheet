@@ -35,11 +35,20 @@ function get_culture(event)
       <div className="Header_App">
       
         <label>Class</label>
-        <input type="text" id="class" name="class" onChange={get_class}></input>
+        <input list='classes' input='text' id="class" name="class" onChange={get_class}></input>
+        <datalist id='classes'>
+          <option value={'Fighter'}></option>
+        </datalist>
         <label>Heritage</label>
-        <input type="text" id="heritage" name="heritage" onChange={get_heritage}></input>
+        <input type="text" list='heritages' id="heritage" name="heritage" onChange={get_heritage}></input>
+        <datalist id='heritages'>
+          <option value={'Dragonborn'}></option>
+        </datalist>
         <label>Culture</label>
-        <input type="text" id="culture" name="culture" onChange={get_culture}></input>
+        <input type="text" id="culture" list ='cultures' name="culture" onChange={get_culture}></input>
+        <datalist id='cultures'>
+          <option value={'Caravanner'}></option>
+        </datalist>
         <label>Background</label>
         <input type="text" id="background" name="background" onChange></input>
         <label>Destiny</label>

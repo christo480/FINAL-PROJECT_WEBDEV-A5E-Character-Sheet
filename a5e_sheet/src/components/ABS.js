@@ -12,6 +12,7 @@ function ABS(props) {
         
         <div>
           <b>Ability Scores</b>
+          <br></br>
           <div className="scores">
             <StrScore name="Str" value={props.Str} setter={props.Str_setter}></StrScore>
             <DexScore name="Dex" value={props.Dex} setter={props.Dex_setter}></DexScore>

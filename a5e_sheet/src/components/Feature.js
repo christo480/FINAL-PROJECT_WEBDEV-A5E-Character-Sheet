@@ -10,7 +10,18 @@ function Feature(props) {
     return (
       
       <div>
-        <b>{props.title}</b><p>{last_sentence}</p>
+        <b contentEditable='true'>{props.title}</b><p>{last_sentence}</p>
+      </div>
+    );
+  }
+  else if(props.title==="Languages")
+  {
+    return (
+      
+      <div>
+        <b>{props.title}</b><p>{props.value}</p>
+        Other Language:
+        <input type='text'></input>
       </div>
     );
   }
