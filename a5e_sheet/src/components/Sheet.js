@@ -17,6 +17,12 @@ function Sheet(props) {
   // Need to track all numbers on character sheet
   
   // Ability Scores
+  const [Str, setStr] = useState(10);
+  const [Dex, setDex] = useState(10);
+  const [Int, setInt] = useState(10);
+  const [Con, setCon] = useState(10);
+  const [Wis, setWis] = useState(10);
+  const [Cha, setCha] = useState(10);
   // Proficiency
   // Saves
   //
@@ -94,7 +100,7 @@ function Sheet(props) {
          
         </div>
         <hr></hr>
-        <ABS></ABS>
+        <ABS Str={Str} Str_setter={setStr} Dex={Dex} Dex_setter={setDex} Con={Con} Con_setter={setCon} Int={Int} Int_setter ={setInt} Wis={Wis} Wis_setter = {setWis} Cha={Cha} Cha_setter={setCha}></ABS>
         <hr></hr>
         <Culture_Section data= {culture_data}></Culture_Section>
       </div>

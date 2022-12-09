@@ -14,7 +14,7 @@
 }
 .sheet_body{
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     /* font-size: 1/16vw; */
     text-size-adjust: auto;
 }

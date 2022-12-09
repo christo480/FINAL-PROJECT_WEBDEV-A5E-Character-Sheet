@@ -1,5 +1,5 @@
 import { DiceRoll, RollGroup } from '@dice-roller/rpg-dice-roller'; 
-function Score(props) {
+function StrScore(props) {
     //A feature is a name and a description
     function printChange(event)
     {
@@ -7,7 +7,7 @@ function Score(props) {
       console.log(value)
       if (parseInt(value))
       {
-        props.value=value
+        props.setter(value)
       }
     }
       return (
@@ -24,4 +24,4 @@ function Score(props) {
    
     
   
-  export default Score;
+  export default StrScore;

@@ -6,13 +6,13 @@ function ABS(props) {
         
         <div>
           <b>Ability Scores</b>
-          <div className="scores">
-            <Score name="Str" value={8}></Score>
-            <Score name="Dex" value={10}></Score>
-            <Score name="Con" value={10}></Score>
-            <Score name="Int" value={10}></Score>
-            <Score name="Wis" value={10}></Score>
-            <Score name="Cha" value={10}></Score>
+          <div className="scores">{/*
+            <StrScore name="Str" value={props.Str} setter={props.Str_setter}></StrScore>
+             <DexScore name="Dex" value={props.Dex}></DexScore>
+            <ConScore name="Con" value={props.Con}></ConScore>
+            <IntScore name="Int" value={props.Int}></IntScore>
+            <WisScore name="Wis" value={props.Wis}></WisScore>
+            <ChaScore name="Cha" value={props.Cha}></ChaScore> */}
           </div>
         </div>
       );

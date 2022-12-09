@@ -8,7 +8,9 @@ function Heritage_Section(props) {
           <Feature title="Age" value={props.Age}></Feature>
           <Feature title="Size" value={props.Size}></Feature>
           <Feature title="Speed" value={props.Speed}></Feature>
+          <hr></hr>
         </div>
+
       );
     }
   
