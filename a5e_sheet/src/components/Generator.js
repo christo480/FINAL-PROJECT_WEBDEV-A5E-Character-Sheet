@@ -31,6 +31,20 @@ function Generator(props) {
   function Generate_3d6_all()
   {
     props.Str_setter(Generate_3d6())
+    props.Dex_setter(Generate_3d6())
+    props.Con_setter(Generate_3d6())
+    props.Int_setter(Generate_3d6())
+    props.Wis_setter(Generate_3d6())
+    props.Cha_setter(Generate_3d6())
+  }
+  function Generate_4d6_all()
+  {
+    props.Str_setter(Generate_4d6())
+    props.Dex_setter(Generate_4d6())
+    props.Con_setter(Generate_4d6())
+    props.Int_setter(Generate_4d6())
+    props.Wis_setter(Generate_4d6())
+    props.Cha_setter(Generate_4d6())
   }
   function Generate_4d6()
   {
@@ -39,7 +53,7 @@ function Generator(props) {
     console.log(roll_arr)
     roll_arr.splice(0,1)
     let sum = roll_arr.reduce((sum,val)=> sum+val)
-    console.log(sum)
+    return sum
     //console.log(roll_arr)
     //alert(roll_arr)
   }
