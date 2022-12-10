@@ -9,7 +9,7 @@ import Culture_Section from "./Culture_Section";
 import ABS from "./ABS"
 import Roller from "./Roller";
 import Generator from "./Generator";
-
+import Special_Heritage from "./Special_Heritage";
 
 function Sheet(props) {
 
@@ -47,15 +47,14 @@ function Sheet(props) {
     let data
     
       //MongoDB server is used make sure server.js is running 
-    console.log("Tried Mongo I said")
     let response = fetch('http://localhost:3200/db/findOne/test_database/test_collection/'+query)
     .then(response => response.json())
     
     data = await response
     console.log(data)
     console.log(query)
-    
-    setHeritage({Name:data.Name,Age:data.Age,Size:data.Size,Speed:data.Speed});
+    setHeritage(data)
+    //setHeritage({Name:data.Name,Age:data.Age,Size:data.Size,Speed:data.Speed});
   }
   async function fetch_Class_Data(query) {
 
@@ -90,10 +89,15 @@ function Sheet(props) {
     console.log(roll)
     alert(roll)
   }
+  function heritage_data()
+  {
+    return Heritage
+  }
   function culture_data()// When deadling with dynamic data a function must be sent for the data to be dynamically loaded
   {
     return Culture
   }
+
     return (
       <div className="sheet_App">
         <Header heritage_updater={fetch_Heritage_Data} class_updater={fetch_Class_Data} culture_updater={fetch_Culture_Data}></Header>
@@ -106,7 +110,8 @@ function Sheet(props) {
         
         <hr></hr>
         <div className="sheet_body">
-        <Heritage_Section Name={Heritage.Name} Age={Heritage.Age} Size={Heritage.Size} Speed={Heritage.Speed}></Heritage_Section> 
+        <Heritage_Section Name={Heritage.Name} Age={Heritage.Age} Size={Heritage.Size} Speed={Heritage.Speed}></Heritage_Section>
+        <Special_Heritage Name={Heritage.Name} data_func={heritage_data}></Special_Heritage> 
         <Class_Section Name={Class.Name} HitDie={Class.HitDie}></Class_Section>
          
         </div>
