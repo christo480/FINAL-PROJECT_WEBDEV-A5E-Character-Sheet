@@ -44,11 +44,14 @@ function Sheet(props) {
   // Example link 
   //http://localhost:3200/db/findOne/test_database/test_collection/
   async function fetch_Heritage_Data(query) {
-
-    //Fetch for heritage data
-    let response = await fetch('https://christo480.github.io/WEBDEV/Heritage/'+query+".json")
+    let data
     
-    let data = await response.json()
+      //MongoDB server is used make sure server.js is running 
+    console.log("Tried Mongo I said")
+    let response = fetch('http://localhost:3200/db/findOne/test_database/test_collection/'+query)
+    .then(response => response.json())
+    
+    data = await response
     console.log(data)
     console.log(query)
     
