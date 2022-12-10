@@ -31,6 +31,16 @@ function get_culture(event)
   let input =event.target.value
   props.culture_updater(input)
 }
+function get_background(event)
+{
+ 
+  //fetch call that pulls heritage data from mongoDB
+  //should set react state webhook to update features dynamically
+
+  console.log(event.target.value)//prints value of input
+  let input =event.target.value
+  props.background_updater(input)
+}
     return (
       <div className="Header_App">
       
@@ -50,7 +60,10 @@ function get_culture(event)
           <option value={'Caravanner'}></option>
         </datalist>
         <label>Background</label>
-        <input type="text" id="background" name="background" onChange></input>
+        <input type="text" id="background" list="backgrounds" name="background" onChange={get_background}></input>
+        <datalist id='backgrounds'>
+          <option value={'Farmer'}></option>
+        </datalist>
         <label>Destiny</label>
         <input type="text" id="destiny" name="destiny" onChange></input>
         

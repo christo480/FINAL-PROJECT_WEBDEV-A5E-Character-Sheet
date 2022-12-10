@@ -10,6 +10,7 @@ import ABS from "./ABS"
 import Roller from "./Roller";
 import Generator from "./Generator";
 import Special_Heritage from "./Special_Heritage";
+import Background_Section from "./Background_Section";
 
 function Sheet(props) {
 
@@ -58,11 +59,13 @@ function Sheet(props) {
   }
   async function fetch_Class_Data(query) {
 
-    //Fetch for heritage data
-    console.log(query)
-    let response = await fetch('https://christo480.github.io/WEBDEV/Class/'+query+".json")
+    let data
     
-    let data = await response.json()
+    //MongoDB server is used make sure server.js is running 
+    let response = fetch('http://localhost:3200/db/findOne/test_database/test_collection/'+query)
+    .then(response => response.json())
+    
+    data = await response
     console.log(data)
     console.log(query)
     
@@ -72,15 +75,28 @@ function Sheet(props) {
   async function fetch_Culture_Data(query) {
 
     //Fetch for heritage data
-    console.log(query)
-    let response = await fetch('https://christo480.github.io/WEBDEV/Culture/'+query+".json")
+    let response = fetch('http://localhost:3200/db/findOne/test_database/test_collection/'+query)
+    .then(response => response.json())
     
-    let data = await response.json()
+    let data = await response
     console.log("Culture")
     console.log(data)
     console.log(query)
     
     setCulture({Features:data.Features,Languages:data.Languages});
+  }
+  async function fetch_Background_Data(query) {
+
+    //Fetch for heritage data
+    let response = fetch('http://localhost:3200/db/findOne/test_database/test_collection/'+query)
+    .then(response => response.json())
+    
+    let data = await response
+    console.log("Background")
+    console.log(data)
+    console.log(query)
+    
+    setBackground(data);
   }
   function arbitrary_roll()
   {
@@ -97,10 +113,14 @@ function Sheet(props) {
   {
     return Culture
   }
+  function background_data()// When deadling with dynamic data a function must be sent for the data to be dynamically loaded
+  {
+    return Background
+  }
 
     return (
       <div className="sheet_App">
-        <Header heritage_updater={fetch_Heritage_Data} class_updater={fetch_Class_Data} culture_updater={fetch_Culture_Data}></Header>
+        <Header heritage_updater={fetch_Heritage_Data} class_updater={fetch_Class_Data} culture_updater={fetch_Culture_Data} background_updater={fetch_Background_Data}></Header>
         {/* <input type="text" id="arbitrary_roll" ></input>
         <button onClick={arbitrary_roll}> Roll</button>  */}
         <div className="rollers">
@@ -119,6 +139,7 @@ function Sheet(props) {
         <ABS Str={Str} Str_setter={setStr} Dex={Dex} Dex_setter={setDex} Con={Con} Con_setter={setCon} Int={Int} Int_setter ={setInt} Wis={Wis} Wis_setter = {setWis} Cha={Cha} Cha_setter={setCha}></ABS>
         <hr></hr>
         <Culture_Section data= {culture_data}></Culture_Section>
+        <Background_Section data={background_data}></Background_Section>
       </div>
     );
   }

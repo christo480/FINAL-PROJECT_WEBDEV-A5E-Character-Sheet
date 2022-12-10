@@ -21,17 +21,18 @@ function Culture_Section(props) {
             }
             <Feature title="Languages" value={data.Languages}></Feature>
             {/* <Feature title="Set" value={props.Set["Brigand’s Set"]["Cost"]}></Feature> */}
-            
+            <hr></hr>
             </div>
         );}
     else
     {
         return(
             <div>
-            
+            <hr></hr>
             </div>
         );
     }
+    
     }
   
 export default Culture_Section;
