@@ -6,7 +6,7 @@ function Heritage_Section(props) {
         <div>
           <b>Heritage</b>
           <hr></hr>
-          <Feature title="Heritage" value={props.Name}></Feature>
+          <Feature title="" value={props.Name}></Feature>
           <Feature title="Age" value={props.Age}></Feature>
           <Feature title="Size" value={props.Size}></Feature>
           <Feature title="Speed" value={props.Speed}></Feature>

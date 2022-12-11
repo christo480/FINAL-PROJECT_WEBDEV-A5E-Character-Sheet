@@ -41,7 +41,7 @@ function Sheet(props) {
   
   //Manage States of following variables
   const [Heritage, setHeritage] = useState({Name:"",Age:"",Size:"",Speed:""});
-  const [Class, setClass] = useState({Name:"",HitDie:"",Proficiencies:"",Equipment:"",Features:""});
+  const [Class, setClass] = useState({Name:"",HitDie:0,Proficiencies:"",Equipment:"",Features:""});
   const [Culture, setCulture] = useState({Features:"",Languages:""});
   const [Background, setBackground] = useState("");
   const [Destiny, setDestiny] = useState("");
@@ -136,6 +136,10 @@ function Sheet(props) {
   {
     return Heritage
   }
+  function class_data()
+  {
+    return Class
+  }
   function culture_data()// When deadling with dynamic data a function must be sent for the data to be dynamically loaded
   {
     return Culture
@@ -212,7 +216,7 @@ function Sheet(props) {
         <div className="sheet_body">
         <Heritage_Section Name={Heritage.Name} Age={Heritage.Age} Size={Heritage.Size} Speed={Heritage.Speed}></Heritage_Section>
         <Special_Heritage Name={Heritage.Name} data_func={heritage_data}></Special_Heritage> 
-        <Class_Section Name={Class.Name} HitDie={Class.HitDie} Level={Level}></Class_Section>
+        <Class_Section Name={Class.Name} HitDie={Class.HitDie} Level={Level} data={class_data} Con={Con}></Class_Section>
          
         </div>
         <hr></hr>

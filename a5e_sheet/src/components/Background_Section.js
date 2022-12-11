@@ -31,6 +31,7 @@ function Background_Section(props) {
 
             })
         }
+        <hr></hr>
         </div>
     );
     
