@@ -137,11 +137,12 @@ function Sheet(props) {
     return Destiny
   }
 
-  function save_data()
+  function save_data(code)
   {
     console.log("SAVE DATA")
     let saved_data= {}
     // All data must be saved here
+    saved_data['code'] = code
     saved_data['Name'] = Name
     saved_data['Level']= Level
     saved_data['Str']= Str
@@ -152,6 +153,7 @@ function Sheet(props) {
     saved_data['Cha']= Cha
     saved_data['Heritage']=Heritage
     saved_data['Class']=Class
+    saved_data['Culture']=Culture
     saved_data['Background']=Background
     saved_data['Destiny']=Destiny
     fetch('http://localhost:3200/save/test_database/userdata_a5esheet/', {  // Enter your IP address here
@@ -160,12 +162,28 @@ function Sheet(props) {
       body: JSON.stringify(saved_data) // body data type must match "Content-Type" header
 
     })
-    console.log(saved_data)
+    //console.log(saved_data)
   }
 
-  function load_data()
+  async function load_data(code)
   {
-    console.log("LOAD DATA")
+    let response = fetch('http://localhost:3200/load/test_database/userdata_a5esheet/'+code)
+    .then(response => response.json())
+    let data = await response
+    console.log(data)
+    setName(data['Name'])
+    setLevel(data['Level'])
+    setStr(data['Str'])
+    setDex(data['Dex'])
+    setInt(data['Int'])
+    setCon(data['Con'])
+    setWis(data['Wis'])
+    setCha(data['Cha'])
+    setHeritage(data['Heritage'])
+    setClass(data['Class'])
+    setCulture(data['Culture'])
+    setBackground(data['Background'])
+    setDestiny(data['Destiny'])
   }
 
     return (

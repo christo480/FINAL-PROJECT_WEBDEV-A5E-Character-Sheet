@@ -36,7 +36,7 @@ server.get('/db/findOne/:db/:collection/:query', async (req, res) => {
   const result = await client.db(db).collection(collection).findOne({Name:query});
   res.send(result);
 });
-//saves data to MongoDB
+//saves data to MongoDB 
 server.post('/save/:db/:collection/', async (req, res) => {
   let data = req.body
   const { db, collection} = req.params;
@@ -48,6 +48,13 @@ server.post('/save/:db/:collection/', async (req, res) => {
     "mess" : "saved!"
   }
   res.send(message)
+})
+//loads data from MongoDB 
+server.get('/load/:db/:collection/:query', async (req, res) => {
+  
+  const { db, collection,query} = req.params;
+  const result = await client.db(db).collection(collection).findOne({code:query});
+  res.send(result)
 })
 
 server.get('/', (req, res) => {

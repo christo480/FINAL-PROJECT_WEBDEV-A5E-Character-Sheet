@@ -1,4 +1,5 @@
-import { DiceRoll, RollGroup } from '@dice-roller/rpg-dice-roller'; 
+import { DiceRoll, RollGroup } from '@dice-roller/rpg-dice-roller';
+import {useRef} from 'react'; 
 function Generator(props) {
 
   //
@@ -53,16 +54,36 @@ function Generator(props) {
     //console.log(roll_arr)
     //alert(roll_arr)
   }
-
+  const code_input = useRef(null);
   // Saving 
+  function save()
+  {
+    let code= code_input.current.value
+    console.log(code)
+    if(code=="")
+    {
+      alert("Please Enter a Save Code")
+    }
+    else
+    {
+      props.save_func(code)
+    }
+  }
+  function load()
+  {
+    let code= code_input.current.value
+    props.load_func(code)
+  }
       return (
         
         <div>
            
             <button onClick={Generate_3d6_all}> Generate 3d6 Stats</button> 
             <button onClick={Generate_4d6}> Generate 4d6 Stats</button>
-            <button onClick={props.save_func}>Save Sheet</button>
-            <button onClick={props.load_func}>Load Data</button> 
+            <button onClick={save}>Save Sheet</button>
+            {/* <h5>Save String</h5> */}
+            <input type="text" id="saveString" name="saveString" placeholder="Code to save your character" ref={code_input}></input>
+            <button onClick={load}>Load Data</button> 
         </div>
       );
       
