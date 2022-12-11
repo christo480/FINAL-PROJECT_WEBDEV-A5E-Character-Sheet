@@ -5,10 +5,14 @@ import { MongoClient, ServerApiVersion } from 'mongodb';
 import cors from 'cors'
 
 
+
+
 const PORT = 3200;
 
 const server = express();
+server.use(express.json())
 server.use(cors())
+
 const uri = "mongodb+srv://GameMaster:Jackoval@webdev.4wt0u2s.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 await client.connect();
@@ -32,6 +36,19 @@ server.get('/db/findOne/:db/:collection/:query', async (req, res) => {
   const result = await client.db(db).collection(collection).findOne({Name:query});
   res.send(result);
 });
+//saves data to MongoDB
+server.post('/save/:db/:collection/', async (req, res) => {
+  let data = req.body
+  const { db, collection} = req.params;
+  const result = await client.db(db).collection(collection).insertOne(data);
+  console.log(data)
+
+  let message=
+  {
+    "mess" : "saved!"
+  }
+  res.send(message)
+})
 
 server.get('/', (req, res) => {
   res.send('<h1>Include this in your screenshot for Step 2 of your lab report!</h1>')

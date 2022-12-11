@@ -154,6 +154,12 @@ function Sheet(props) {
     saved_data['Class']=Class
     saved_data['Background']=Background
     saved_data['Destiny']=Destiny
+    fetch('http://localhost:3200/save/test_database/userdata_a5esheet/', {  // Enter your IP address here
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(saved_data) // body data type must match "Content-Type" header
+
+    })
     console.log(saved_data)
   }
 
