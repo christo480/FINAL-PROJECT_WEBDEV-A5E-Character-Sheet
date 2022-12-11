@@ -41,6 +41,16 @@ function get_background(event)
   let input =event.target.value
   props.background_updater(input)
 }
+function get_destiny(event)
+{
+ 
+  //fetch call that pulls heritage data from mongoDB
+  //should set react state webhook to update features dynamically
+
+  console.log(event.target.value)//prints value of input
+  let input =event.target.value
+  props.destiny_updater(input)
+}
     return (
       <div className="Header_App">
       
@@ -65,8 +75,10 @@ function get_background(event)
           <option value={'Farmer'}></option>
         </datalist>
         <label>Destiny</label>
-        <input type="text" id="destiny" name="destiny" onChange></input>
-        
+        <input type="text" id="destiny" list="destinies" name="destiny" onChange={get_destiny}></input>
+        <datalist id='destinies'>
+          <option value={'Revenge'}></option>
+        </datalist>
       </div>
     );
   }

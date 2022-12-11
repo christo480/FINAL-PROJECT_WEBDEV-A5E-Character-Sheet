@@ -11,7 +11,7 @@ import Roller from "./Roller";
 import Generator from "./Generator";
 import Special_Heritage from "./Special_Heritage";
 import Background_Section from "./Background_Section";
-
+import Destiny_Section from "./Destiny_Section";
 function Sheet(props) {
 
   // Using a Dice roller api to genengerate 3d6 and 4d6 stats should satisfy public api use
@@ -98,6 +98,19 @@ function Sheet(props) {
     
     setBackground(data);
   }
+  async function fetch_Destiny_Data(query) {
+
+    //Fetch for heritage data
+    let response = fetch('http://localhost:3200/db/findOne/test_database/test_collection/'+query)
+    .then(response => response.json())
+    
+    let data = await response
+    console.log("Destiny")
+    console.log(data)
+    console.log(query)
+    
+    setDestiny(data);
+  }
   function arbitrary_roll()
   {
     let query = document.getElementById("arbitrary_roll").value
@@ -116,6 +129,10 @@ function Sheet(props) {
   function background_data()// When deadling with dynamic data a function must be sent for the data to be dynamically loaded
   {
     return Background
+  }
+  function destiny_data()// When deadling with dynamic data a function must be sent for the data to be dynamically loaded
+  {
+    return Destiny
   }
 
     return (
@@ -140,6 +157,7 @@ function Sheet(props) {
         <hr></hr>
         <Culture_Section data= {culture_data}></Culture_Section>
         <Background_Section data={background_data}></Background_Section>
+        <Destiny_Section data={destiny_data}></Destiny_Section>
       </div>
     );
   }
