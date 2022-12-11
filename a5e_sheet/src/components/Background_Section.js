@@ -8,8 +8,9 @@ function Background_Section(props) {
     console.log(data) 
     return(
         <div>
-        <b>Background</b>
+        <b>{data.Name}</b>
         <hr></hr>
+        
         {
             Features.map((val,idx)=>{
                 console.log(idx)

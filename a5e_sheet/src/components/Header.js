@@ -84,8 +84,8 @@ function Header(props) {
     return (
       <div className="Header_App">
         <div className='user'>
-          Name<input input='text' id="name" name="name" onChange={get_Name}></input>
-          Level<input input='text' id="level" name="level" onChange={get_Level}></input>
+          Name:{props.name}<input input='text' id="name" name="name" onChange={get_Name}></input>
+          Level:{props.level}<input input='text' id="level" name="level" onChange={get_Level}></input>
         </div>
         <label>Class</label>
         <input list='classes' input='text' id="class" name="class" onChange={get_class}></input>

@@ -10,7 +10,8 @@ function Culture_Section(props) {
         //console.log(data)
         return (
             <div>
-            <h2>{data.Name}</h2>
+            <b>{data.Name}</b>
+            <hr></hr>
             {
                 Features.map((val,idx)=>{
                     return(

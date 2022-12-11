@@ -204,7 +204,7 @@ function Sheet(props) {
 
     return (
       <div className="sheet_App">
-        <Header name_updater={setName} level={Level} level_updater={setLevel} heritage_updater={fetch_Heritage_Data} class_updater={fetch_Class_Data} culture_updater={fetch_Culture_Data} background_updater={fetch_Background_Data} destiny_updater={fetch_Destiny_Data}></Header>
+        <Header name ={Name} name_updater={setName} level={Level} level_updater={setLevel} heritage_updater={fetch_Heritage_Data} class_updater={fetch_Class_Data} culture_updater={fetch_Culture_Data} background_updater={fetch_Background_Data} destiny_updater={fetch_Destiny_Data}></Header>
         {/* <input type="text" id="arbitrary_roll" ></input>
         <button onClick={arbitrary_roll}> Roll</button>  */}
         <div className="rollers">
