@@ -12,6 +12,8 @@ import Generator from "./Generator";
 import Special_Heritage from "./Special_Heritage";
 import Background_Section from "./Background_Section";
 import Destiny_Section from "./Destiny_Section";
+import Spell_Section from "./Spell_Section";
+
 function Sheet(props) {
 
   // Using a Dice roller api to genengerate 3d6 and 4d6 stats should satisfy public api use
@@ -44,6 +46,10 @@ function Sheet(props) {
   const [Background, setBackground] = useState("");
   const [Destiny, setDestiny] = useState("");
   
+  //Spells
+  // Used to track spells that have been added to the character
+  const [Spells,setSpells] = useState({hasSpells:"no",1:"",2:"",3:"",4:"",5:"",6:"",7:"",8:"",9:""});
+
   // Example link 
   //http://localhost:3200/db/findOne/test_database/test_collection/
   async function fetch_Heritage_Data(query) {
@@ -71,7 +77,13 @@ function Sheet(props) {
     console.log(data)
     console.log(query)
     
-    setClass({Name:data.Name,HitDie:data.HitDie,Sets:data.Equipment});
+    setClass(data);
+    if(Class.Name=='Bard' || Class.Name=='Sorcerer' || Class.Name=='Cleric' || Class.Name=='Druid')
+    {
+      let temp = Spells
+      temp['hasSpells']='yes'
+      setSpells(temp) 
+    }
   }
 
   async function fetch_Culture_Data(query) {
@@ -85,7 +97,7 @@ function Sheet(props) {
     console.log(data)
     console.log(query)
     
-    setCulture({Features:data.Features,Languages:data.Languages});
+    setCulture(data);
   }
   async function fetch_Background_Data(query) {
 
@@ -209,6 +221,7 @@ function Sheet(props) {
         <Culture_Section data= {culture_data}></Culture_Section>
         <Background_Section data={background_data}></Background_Section>
         <Destiny_Section data={destiny_data}></Destiny_Section>
+        <Spell_Section Spells={Spells}></Spell_Section>
       </div>
     );
   }
