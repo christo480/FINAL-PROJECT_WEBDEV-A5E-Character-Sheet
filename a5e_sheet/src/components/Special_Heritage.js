@@ -3,7 +3,7 @@ import '../styles/Heritage_Section.css';
 function Special_Heritage(props) {
     //This component renders special parts of the Heritage Features that require the whole data json
     let data=props.data_func(props.Name)
-    console.log(data)
+    //console.log(data)
     let Features =Object.keys(data)
     
     // Gift Choices - To be sent to Feature Choices
@@ -27,7 +27,7 @@ function Special_Heritage(props) {
         }
         return Paragons
     }
-    console.log(Features)
+    //console.log(Features)
     if(props.Name=="Human")
     {
         //Custom Rendering for Human race

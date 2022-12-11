@@ -15,8 +15,10 @@ import Destiny_Section from "./Destiny_Section";
 function Sheet(props) {
 
   // Using a Dice roller api to genengerate 3d6 and 4d6 stats should satisfy public api use
- 
-
+  
+  // Name and level
+  const [Name,setName]= useState('');
+  const [Level,setLevel]=useState(1);
   // Need to track all numbers on character sheet
   
   // Ability Scores
@@ -135,21 +137,46 @@ function Sheet(props) {
     return Destiny
   }
 
+  function save_data()
+  {
+    console.log("SAVE DATA")
+    let saved_data= {}
+    // All data must be saved here
+    saved_data['Name'] = Name
+    saved_data['Level']= Level
+    saved_data['Str']= Str
+    saved_data['Dex']= Dex
+    saved_data['Int']= Int
+    saved_data['Con']= Con
+    saved_data['Wis']= Wis
+    saved_data['Cha']= Cha
+    saved_data['Heritage']=Heritage
+    saved_data['Class']=Class
+    saved_data['Background']=Background
+    saved_data['Destiny']=Destiny
+    console.log(saved_data)
+  }
+
+  function load_data()
+  {
+    console.log("LOAD DATA")
+  }
+
     return (
       <div className="sheet_App">
-        <Header heritage_updater={fetch_Heritage_Data} class_updater={fetch_Class_Data} culture_updater={fetch_Culture_Data} background_updater={fetch_Background_Data}></Header>
+        <Header name_updater={setName} level={Level} level_updater={setLevel} heritage_updater={fetch_Heritage_Data} class_updater={fetch_Class_Data} culture_updater={fetch_Culture_Data} background_updater={fetch_Background_Data} destiny_updater={fetch_Destiny_Data}></Header>
         {/* <input type="text" id="arbitrary_roll" ></input>
         <button onClick={arbitrary_roll}> Roll</button>  */}
         <div className="rollers">
           <Roller></Roller>
-          <Generator Str={Str} Str_setter={setStr} Dex={Dex} Dex_setter={setDex} Con={Con} Con_setter={setCon} Int={Int} Int_setter ={setInt} Wis={Wis} Wis_setter = {setWis} Cha={Cha} Cha_setter={setCha}></Generator>
+          <Generator Str={Str} Str_setter={setStr} Dex={Dex} Dex_setter={setDex} Con={Con} Con_setter={setCon} Int={Int} Int_setter ={setInt} Wis={Wis} Wis_setter = {setWis} Cha={Cha} Cha_setter={setCha} save_func={save_data} load_func={load_data}></Generator>
         </div>
         
         <hr></hr>
         <div className="sheet_body">
         <Heritage_Section Name={Heritage.Name} Age={Heritage.Age} Size={Heritage.Size} Speed={Heritage.Speed}></Heritage_Section>
         <Special_Heritage Name={Heritage.Name} data_func={heritage_data}></Special_Heritage> 
-        <Class_Section Name={Class.Name} HitDie={Class.HitDie}></Class_Section>
+        <Class_Section Name={Class.Name} HitDie={Class.HitDie} Level={Level}></Class_Section>
          
         </div>
         <hr></hr>

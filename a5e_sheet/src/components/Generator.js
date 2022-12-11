@@ -1,13 +1,9 @@
 import { DiceRoll, RollGroup } from '@dice-roller/rpg-dice-roller'; 
 function Generator(props) {
 
-    function arbitrary_roll()
-  {
-    let query = document.getElementById("arbitrary_roll").value
-    const roll = new DiceRoll(query)
-    console.log(roll)
-    alert(roll)
-  }
+  //
+  // Code for Generators
+  //
   function Generate_roll_array(query,size)
   {
     let arr = Array()
@@ -57,12 +53,16 @@ function Generator(props) {
     //console.log(roll_arr)
     //alert(roll_arr)
   }
+
+  // Saving 
       return (
         
         <div>
            
             <button onClick={Generate_3d6_all}> Generate 3d6 Stats</button> 
-            <button onClick={Generate_4d6}> Generate 4d6 Stats</button> 
+            <button onClick={Generate_4d6}> Generate 4d6 Stats</button>
+            <button onClick={props.save_func}>Save Sheet</button>
+            <button onClick={props.load_func}>Load Data</button> 
         </div>
       );
       

@@ -10,7 +10,7 @@ function Feature(props) {
     return (
       
       <div>
-        <b contentEditable='true'>{props.title}</b><p>{last_sentence}</p>
+        <b>{props.title}</b><p>{last_sentence}</p>
       </div>
     );
   }
