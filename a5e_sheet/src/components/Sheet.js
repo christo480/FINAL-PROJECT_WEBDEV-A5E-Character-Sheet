@@ -58,12 +58,15 @@ function Sheet(props) {
       //MongoDB server is used make sure server.js is running 
     let response = fetch('http://localhost:3200/db/findOne/test_database/test_collection/'+query)
     .then(response => response.json())
-    
     data = await response
+    // Check if its valid Heritage data - Will need to cover this check 
+    if(data['Age'])
+    {
+    
     console.log(data)
     console.log(query)
     setHeritage(data)
-    //setHeritage({Name:data.Name,Age:data.Age,Size:data.Size,Speed:data.Speed});
+   }
   }
   async function fetch_Class_Data(query) {
 
@@ -74,10 +77,14 @@ function Sheet(props) {
     .then(response => response.json())
     
     data = await response
-    console.log(data)
-    console.log(query)
-    
-    setClass(data);
+    // Check if its valid Heritage data - Will need to cover this check 
+    if(data['HitDie'])
+    {
+      console.log(data)
+      console.log(query)
+      
+      setClass(data);
+    }
     if(Class.Name=='Bard' || Class.Name=='Sorcerer' || Class.Name=='Cleric' || Class.Name=='Druid')
     {
       let temp = Spells
@@ -94,10 +101,13 @@ function Sheet(props) {
     
     let data = await response
     console.log("Culture")
-    console.log(data)
-    console.log(query)
-    
-    setCulture(data);
+    if(data['Languages'])
+    {
+      console.log(data)
+      console.log(query)
+      
+      setCulture(data);
+    }
   }
   async function fetch_Background_Data(query) {
 

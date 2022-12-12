@@ -17,48 +17,59 @@ function Header(props) {
     //should set react state webhook to update features dynamically
 
     //console.log(event.target.value)//prints value of input
-    let input =event.target.value
-    props.heritage_updater(input)
+    if(event.target.value!="")
+    {
+      let input =event.target.value
+      props.heritage_updater(input)
+    }
   }
   function get_class(event)
   {
   
     //fetch call that pulls heritage data from mongoDB
     //should set react state webhook to update features dynamically
-
-    console.log(event.target.value)//prints value of input
-    let input =event.target.value
-    props.class_updater(input)
+    if(event.target.value!="")
+    {
+      console.log(event.target.value)//prints value of input
+      let input =event.target.value
+      props.class_updater(input)
+    }
   }
   function get_culture(event)
   {
   
     //fetch call that pulls heritage data from mongoDB
     //should set react state webhook to update features dynamically
-
-    console.log(event.target.value)//prints value of input
-    let input =event.target.value
-    props.culture_updater(input)
+    if(event.target.value!="")
+    {
+      console.log(event.target.value)//prints value of input
+      let input =event.target.value
+      props.culture_updater(input)
+    }
   }
   function get_background(event)
   {
   
     //fetch call that pulls heritage data from mongoDB
     //should set react state webhook to update features dynamically
-
-    console.log(event.target.value)//prints value of input
-    let input =event.target.value
-    props.background_updater(input)
+    if(event.target.value!="")
+    {
+      console.log(event.target.value)//prints value of input
+      let input =event.target.value
+      props.background_updater(input)
+    }
   }
   function get_destiny(event)
   {
   
     //fetch call that pulls heritage data from mongoDB
     //should set react state webhook to update features dynamically
-
-    console.log(event.target.value)//prints value of input
-    let input =event.target.value
-    props.destiny_updater(input)
+    if(event.target.value!="")
+    {
+      console.log(event.target.value)//prints value of input
+      let input =event.target.value
+      props.destiny_updater(input)
+    }
   }
   function get_Name(event)
   {

@@ -79,7 +79,7 @@ function Generator(props) {
         <div>
            
             <button onClick={Generate_3d6_all}> Generate 3d6 Stats</button> 
-            <button onClick={Generate_4d6}> Generate 4d6 Stats</button>
+            <button onClick={Generate_4d6_all}> Generate 4d6 Stats</button>
             <button onClick={save}>Save Sheet</button>
             {/* <h5>Save String</h5> */}
             <input type="text" id="saveString" name="saveString" placeholder="Code to save your character" ref={code_input}></input>

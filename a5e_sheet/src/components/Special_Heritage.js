@@ -1,5 +1,6 @@
 import Feature from "./Feature";
 import '../styles/Heritage_Section.css';
+import CFeature from "./CFeature";
 function Special_Heritage(props) {
     //This component renders special parts of the Heritage Features that require the whole data json
     let data=props.data_func(props.Name)
@@ -27,8 +28,27 @@ function Special_Heritage(props) {
         }
         return Paragons
     }
-    //console.log(Features)
-    if(props.Name=="Human")
+    //console.log(get_Gifts())
+    if(props.Name=="Dragonborn")
+    {
+        //Custom Rendering for Dragonborn
+        return(
+            <div>
+              
+                <Feature title={'Dragon Breath'} value={data['Dragon Breath']}></Feature>
+                <hr></hr>
+                <b>GIFTS</b>
+                <hr></hr>
+                <div>
+                    {/* // Gift Rendering */}
+                    <CFeature data ={get_Gifts}></CFeature>
+                </div>
+                <hr></hr>
+            </div>
+    
+          );  
+    }
+    else
     {
         //Custom Rendering for Human race
         return(
@@ -54,27 +74,30 @@ function Special_Heritage(props) {
                     }
 
                 })
-            }
+                
+                
+                }
+                <hr></hr>
+                <b>GIFTS</b>
+                <hr></hr>
+                <div>
+                <CFeature data ={get_Gifts}></CFeature>
+                </div>
               <hr></hr>
             </div>
     
           );  
     }
-    if(props.Name=="Dragonborn")
+    
+    
+    if(data['Gifts'])
     {
-        //Custom Rendering for Dragonborn
         return(
-            <div>
-              
-                <Feature title={'Dragon Breath'} value={data['Dragon Breath']}></Feature>
-              
-              <hr></hr>
-            </div>
-    
-          );  
+        <div>
+            <CFeature data ={get_Gifts}></CFeature>
+        </div>
+        )
     }
-    // Gift Rendering
-    
         return (
         <div>
           
