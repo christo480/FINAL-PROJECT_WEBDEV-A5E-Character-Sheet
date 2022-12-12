@@ -116,11 +116,17 @@ function Header(props) {
         <label>Background</label>
         <input type="text" id="background" list="backgrounds" name="background" onChange={get_background}></input>
         <datalist id='backgrounds'>
+        <option value={'Excellence'}></option>
           <option value={'Farmer'}></option>
         </datalist>
         <label>Destiny</label>
         <input type="text" id="destiny" list="destinies" name="destiny" onChange={get_destiny}></input>
         <datalist id='destinies'>
+          <option value={'Chaos'}></option>
+          <option value={'Coming of Age'}></option>
+          <option value={'Devotion'}></option>
+          <option value={'Dominion'}></option>
+          <option value={'Excellence'}></option>
           <option value={'Revenge'}></option>
         </datalist>
       </div>
