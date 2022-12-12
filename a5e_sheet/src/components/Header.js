@@ -101,11 +101,13 @@ function Header(props) {
         <label>Class</label>
         <input list='classes' input='text' id="class" name="class" onChange={get_class}></input>
         <datalist id='classes'>
+          <option value={'Cleric'}></option>
           <option value={'Fighter'}></option>
         </datalist>
         <label>Heritage</label>
         <input type="text" list='heritages' id="heritage" name="heritage" onChange={get_heritage}></input>
         <datalist id='heritages'>
+          <option value={'Human'}></option>
           <option value={'Dragonborn'}></option>
         </datalist>
         <label>Culture</label>
@@ -116,7 +118,7 @@ function Header(props) {
         <label>Background</label>
         <input type="text" id="background" list="backgrounds" name="background" onChange={get_background}></input>
         <datalist id='backgrounds'>
-          <option value={'Excellence'}></option>
+          <option value={'Acolyte'}></option>
           <option value={'Farmer'}></option>
         </datalist>
         <label>Destiny</label>
