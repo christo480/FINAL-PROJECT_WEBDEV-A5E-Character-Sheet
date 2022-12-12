@@ -116,7 +116,7 @@ function Header(props) {
         <label>Background</label>
         <input type="text" id="background" list="backgrounds" name="background" onChange={get_background}></input>
         <datalist id='backgrounds'>
-        <option value={'Excellence'}></option>
+          <option value={'Excellence'}></option>
           <option value={'Farmer'}></option>
         </datalist>
         <label>Destiny</label>
